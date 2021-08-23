@@ -33,8 +33,14 @@
 }
 
 .l-footer {
-  padding: 0 62px;
-  padding: 0 6.2rem;
+  padding: 0 20px;
+  padding: 0 2.0rem;
+}
+
+@media screen and (min-width: 768px) {
+  .l-footer {
+    padding: 0 1.5rem;
+  }
 }
 
 .l-inner {
@@ -755,7 +761,7 @@ select::-ms-expand {
   margin-top: 3.7rem;
   display: grid;
   grid-template-rows: 10.8rem 10.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
