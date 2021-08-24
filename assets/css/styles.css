@@ -11,13 +11,13 @@
 }
 
 .l-access {
-  padding: 92px 0 32px;
-  padding: 9.2rem 0 3.2rem;
+  padding: 92px 0 80px;
+  padding: 9.2rem 0 8.0rem;
 }
 
 @media screen and (min-width: 768px) {
   .l-access {
-    padding: 14.3rem 0 8.2rem;
+    padding: 14.3rem 0 21.6rem;
   }
 }
 
@@ -129,6 +129,16 @@
   }
 }
 
+.u-show {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .u-show {
+    display: inline;
+  }
+}
+
 /* FontFamily */
 body {
   font-family: "游ゴシック体", sans-serif;
@@ -179,11 +189,26 @@ a {
   }
 }
 
+/* リキッドレイアウト対応 */
 /*
-
 html {
-    /* ルートのフォントサイズを10pxに設定しておく */
-/* ルートのフォントサイズを1.6em（16pxと同等のサイズ）に設定 */
+  //~375px
+  @media (max-width: 375) {
+    font-size: vw(375, 10);
+  }
+
+  //375px~787px
+  font-size: 10px;
+
+	@include mq("md") {
+		font-size: vw(strip-unit($inner), 10);
+	}
+
+  //inner~max-screen
+  @media (min-width: $inner) {
+    font-size: 10px;
+  }
+}*/
 *,
 *::before,
 *::after {
@@ -612,8 +637,8 @@ select::-ms-expand {
 
 @media screen and (min-width: 768px) {
   .p-access-map {
-    grid-row: 4 / 5;
-    grid-column: 2 / 4;
+    padding-top: 14.7rem;
+    padding: 14.7rem 14.0rem 0;
   }
 }
 
@@ -670,34 +695,33 @@ select::-ms-expand {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .p-access__row {
-    display: grid;
-    grid-template-rows: 21.8rem 16.0rem 37.3rem 49.5rem;
-    grid-template-columns: 14.0rem 20.0rem 54.2rem 12.0rem 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+.p-access__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  .p-access__util {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
+  .p-access__top {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 .p-access__items {
   padding: 26px 0 130px;
-  padding: 2.6rem 0 13.0rem;
+  padding: 2.6rem 0 13rem;
 }
 
 @media screen and (min-width: 768px) {
   .p-access__items {
-    grid-row: 2 / 3;
-    grid-column: 1 / 3;
-    padding-top: 0;
+    padding: 9.3rem 0 9.3rem;
   }
 }
 
@@ -735,7 +759,7 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .p-access__foot {
     font-size: 1.6rem;
-    padding-top: .3rem;
+    padding-top: 0.3rem;
   }
 }
 
@@ -1190,13 +1214,14 @@ select::-ms-expand {
   position: relative;
   width: 100%;
   padding-top: 63%;
-  /* = height ÷ width × 100 */
 }
 
 @media screen and (min-width: 768px) {
   .p-iframe-wrap {
-    grid-row: 2 / 3;
-    grid-column: 3 / 5;
+    padding-top: 41.5%;
+    margin-top: 22rem;
+    margin-left: auto;
+    max-width: 66.4rem;
   }
 }
 
